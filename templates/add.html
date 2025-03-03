@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Add Item</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Item</h1>
+        <form method="POST" action="/add">
+            <input type="text" name="name" placeholder="Name" required class="input-field">
+            <input type="number" step="0.01" name="price" placeholder="Price" required class="input-field">
+            <input type="number" step="0.01" name="market_cap" placeholder="Market Cap" required class="input-field">
+            <button type="submit" class="button">Add Item</button>
+        </form>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>

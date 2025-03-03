@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>CRUD App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Items</h1>
+        <a href="/add" class="button">Add New Item</a>
+        <ul>
+            {% for item in items %}
+                <li>
+                    <strong>{{ item[1] }}</strong> - Price: ${{ item[2] }} - Market Cap: ${{ item[3] }}
+                    <div>
+                        <a href="/update/{{ item[0] }}" class="button edit-button">Edit</a>
+                        <a href="/delete/{{ item[0] }}" class="button delete-button">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('logout') }}" class="button">Logout</a>
+    </div>
+</body>
+</html>
